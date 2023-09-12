@@ -16,7 +16,7 @@ function ClearButton() {
     setLotParticipantsWeights([1]);
     setLotWinners([]);
     setWeightsReadyForLot(true);
-    setNamesReadyForLot(false);
+    setNamesReadyForLot(true);
   };
 
   return (
