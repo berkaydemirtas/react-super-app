@@ -15,8 +15,8 @@ function App() {
   return (
     <Router>
       <div className='flex flex-col justify-between h-screen'>
-        <Navbar/>
         <main className='flex-1 bg-gray-100'>
+        <Navbar/>
         <Routes>
           <Route path='/react-super-app' element={<Home/>}></Route>
           <Route path='/react-super-app/about' element={<About/>}></Route>

@@ -57,7 +57,7 @@ const ChatUI = () => {
       </Box>
       <Box sx={{ flexGrow: 0 }}>
         <Typography variant="h6" align="center">
-          You connected to room: {room}
+          You connected to room: {room} , scroll down to send message.
         </Typography>
       </Box>
       <Box sx={{ p: 2, backgroundColor: "background.default" }}>
