@@ -11,10 +11,7 @@ export const ChatRoomContextProvider = ({ children }) => {
   const [nickname, setNickname] = useState(null);
 
   useEffect(() => {
-    const newWebSocket = new WebSocket(
-      "wss://u80h20ucej.execute-api.eu-central-1.amazonaws.com/dev"
-    );
-
+    const newWebSocket = new WebSocket(process.env.REACT_APP_WEBSOCKET_URL);
     newWebSocket.onopen = () => {
       console.log("WebSocket Client Connected");
       setWebSocket(newWebSocket);
