@@ -2,11 +2,12 @@ import React from "react";
 import Popup from "reactjs-popup";
 import { Link } from "react-router-dom";
 
-function Lot(props) {
+function Counter(props) {
+  console.log(props);
   return (
     <div className={props.className}>
-      <Link to="/randomLot" className="btn brown btn-sm rounded-btn text-2xl">
-        Create a random lot
+      <Link to="/counter" className="btn brown btn-sm rounded-btn text-2xl">
+        Use the counter
       </Link>
       <Popup
         trigger={
@@ -18,11 +19,11 @@ function Lot(props) {
       >
         <div className="background-green p-5 rounded-lg">
           {" "}
-          This helps you to draw a random lot
+          Simple counter to increment and decrement
         </div>
       </Popup>
     </div>
   );
 }
 
-export default Lot;
+export default Counter;

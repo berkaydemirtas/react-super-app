@@ -7,6 +7,8 @@ import DrawLotButton from "./DrawLotButton";
 import ClearButton from "./ClearButton";
 import { useContext } from "react";
 import LotDataContext from "../contexts/LotContext";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
 
 function LotParticipants() {
   const { NamesReadyForLot, WeightsReadyForLot } = useContext(LotDataContext);
@@ -15,15 +17,19 @@ function LotParticipants() {
       {NamesReadyForLot ? (
         <div></div>
       ) : (
-        <div className="text-red-500 mx-2">
-          Attendant names can't be empty !!
-        </div>
+        <Alert severity="error">
+          <AlertTitle>Error</AlertTitle>
+          Atendant name can't be empty — <strong>check it out!</strong>
+        </Alert>
       )}
 
       {WeightsReadyForLot ? (
         <div></div>
       ) : (
-        <div className="text-red-500 mx-2">Total weight can't be 0 !!</div>
+        <Alert severity="error">
+          <AlertTitle>Error</AlertTitle>
+          Total weight should be more than 0 — <strong>check it out!</strong>
+        </Alert>
       )}
 
       <div className="flex flex-row">

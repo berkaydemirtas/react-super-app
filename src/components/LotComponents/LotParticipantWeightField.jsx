@@ -13,11 +13,13 @@ function LotParticipantWeightField() {
     let updatedLotParticipantsWeights = [...LotParticipantsWeights];
     updatedLotParticipantsWeights[index] = newWeight;
     setLotParticipantsWeights(updatedLotParticipantsWeights);
-    let totalWeight = 0;
+    let counter = 0;
     for (let i = 0; i < updatedLotParticipantsWeights.length; i++) {
-      totalWeight += Number(updatedLotParticipantsWeights[i]);
+      if (Number(updatedLotParticipantsWeights[i]) > 0) {
+        counter = 1;
+      }
     }
-    if (totalWeight === 0) {
+    if (counter === 0) {
       setWeightsReadyForLot(false);
     } else {
       setWeightsReadyForLot(true);

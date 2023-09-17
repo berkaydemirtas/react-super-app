@@ -6,7 +6,7 @@ import "../../App.css";
 function Navbar({ title }) {
   return (
     <nav
-      className="navbar mb-12 shadow-lg bg-neutral
+      className="navbar shadow-lg bg-neutral
     text-neutral-content"
     >
       <div className="container mx-auto">
