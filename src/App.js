@@ -18,19 +18,19 @@ function App() {
         <Navbar/>
         <main className='flex-1 bg-gray-100'>
         <Routes>
-          <Route path='/' element={<Home/>}></Route>
-          <Route path='/about' element={<About/>}></Route>
-          <Route path='/counter' element={<CounterPage/>}></Route>
+          <Route path='/react-super-app' element={<Home/>}></Route>
+          <Route path='/react-super-app/about' element={<About/>}></Route>
+          <Route path='/react-super-app/counter' element={<CounterPage/>}></Route>
         </Routes>
           <LotDataContextProvider>
             <Routes>
-              <Route path="/randomLot" element={<RandomLotPage />} />
+              <Route path="/react-super-app/randomLot" element={<RandomLotPage />} />
             </Routes>
           </LotDataContextProvider>
           <ChatRoomContextProvider>
             <Routes>   
-              <Route path="/chatRoom" element={<ChatRoom />} />
-              <Route path='/chatRoom/chat' element={<ChatUI/>}></Route>
+              <Route path="/react-super-app/chatRoom" element={<ChatRoom />} />
+              <Route path='/react-super-app/chatRoom/chat' element={<ChatUI/>}></Route>
             </Routes>
           </ChatRoomContextProvider>
         </main>

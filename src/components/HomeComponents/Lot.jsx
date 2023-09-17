@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 function Lot(props) {
   return (
     <div className={props.className}>
-      <Link to="/randomLot" className="btn brown btn-sm rounded-btn text-2xl">
+      <Link
+        to="/react-super-app/randomLot"
+        className="btn brown btn-sm rounded-btn text-2xl"
+      >
         Create a random lot
       </Link>
       <Popup

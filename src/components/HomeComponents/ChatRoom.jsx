@@ -6,7 +6,10 @@ function Counter(props) {
   console.log(props);
   return (
     <div className={props.className}>
-      <Link to="/chatRoom" className="btn brown btn-sm rounded-btn text-2xl">
+      <Link
+        to="/react-super-app/chatRoom"
+        className="btn brown btn-sm rounded-btn text-2xl"
+      >
         Use chat rooms
       </Link>
       <Popup

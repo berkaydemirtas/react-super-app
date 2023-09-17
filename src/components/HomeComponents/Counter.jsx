@@ -6,7 +6,10 @@ function Counter(props) {
   console.log(props);
   return (
     <div className={props.className}>
-      <Link to="/counter" className="btn brown btn-sm rounded-btn text-2xl">
+      <Link
+        to="/react-super-app/counter"
+        className="btn brown btn-sm rounded-btn text-2xl"
+      >
         Use the counter
       </Link>
       <Popup

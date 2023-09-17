@@ -13,7 +13,7 @@ function Navbar({ title }) {
         <div className="flex-none px-2 mx-2">
           <FaBeer className="inline pr-2 text-4xl" />
           <Link
-            to="/"
+            to="/react-super-app"
             className="text-lg font-bold 
             allign-middle"
           >
@@ -24,10 +24,16 @@ function Navbar({ title }) {
 
       <div className="flex">
         <div className="flex justify-end"></div>
-        <Link to="/" className="btn btn-ghost btn-sm rounded-btn">
+        <Link
+          to="/react-super-app"
+          className="btn btn-ghost btn-sm rounded-btn"
+        >
           Home
         </Link>
-        <Link to="/about" className="btn btn-ghost btn-sm rounded-btn">
+        <Link
+          to="/react-super-app/about"
+          className="btn btn-ghost btn-sm rounded-btn"
+        >
           About
         </Link>
       </div>
