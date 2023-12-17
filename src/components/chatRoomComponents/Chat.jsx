@@ -109,7 +109,6 @@ const Message = ({ message }) => {
   const color_of_nickname = stringToColor(message.nickname);
 
   const isOwnMessage = nickname === message.nickname;
-  //console.log(message);
   return (
     <Box
       sx={{
@@ -127,7 +126,10 @@ const Message = ({ message }) => {
       >
         <Tooltip title={message.nickname} arrow>
           <Avatar style={{ backgroundColor: color_of_nickname }}>
-            {message.nickname.slice(0, 3)}
+            {message.nickname.slice(
+              0,
+              Math.min(3, message.nickname.length - 1)
+            )}
           </Avatar>
         </Tooltip>
         <Paper

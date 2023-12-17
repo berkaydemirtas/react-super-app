@@ -3,14 +3,18 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import chatRoomContext from "../contexts/ChatRoomContext";
 import { card_style, card_style_small, button_style } from "./Utils";
 import { useNavigate } from "react-router-dom";
 
 function CreateRoomCard() {
-  const { webSocket, connected, setNickname, setRoom } =
+  const { webSocket, connected, setNickname, setRoom, refreshContext } =
     useContext(chatRoomContext);
+
+  useEffect(() => {
+    refreshContext();
+  }, []);
 
   const [joinFormData, setJoinFormData] = useState({
     roomCode: "",
@@ -29,7 +33,6 @@ function CreateRoomCard() {
       ...createFormData,
       [name]: value,
     });
-    console.log(createFormData);
   };
 
   const handleInputChangeJoin = (e) => {
@@ -38,12 +41,10 @@ function CreateRoomCard() {
       ...joinFormData,
       [name]: value,
     });
-    console.log(joinFormData);
   };
 
   const handleSubmitJoin = (event) => {
     event.preventDefault();
-    console.log("submit button clicked");
     if (webSocket && connected) {
       webSocket.send(
         JSON.stringify({
@@ -62,7 +63,6 @@ function CreateRoomCard() {
 
   const handleSubmitCreate = (event) => {
     event.preventDefault();
-    console.log("submit button clicked");
     if (webSocket && connected) {
       webSocket.send(
         JSON.stringify({

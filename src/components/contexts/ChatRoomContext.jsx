@@ -10,7 +10,7 @@ export const ChatRoomContextProvider = ({ children }) => {
   const [room, setRoom] = useState(null);
   const [nickname, setNickname] = useState(null);
 
-  useEffect(() => {
+  const createWebSocketConnection = () => {
     const newWebSocket = new WebSocket(process.env.REACT_APP_WEBSOCKET_URL);
     newWebSocket.onopen = () => {
       console.log("WebSocket Client Connected");
@@ -19,12 +19,11 @@ export const ChatRoomContextProvider = ({ children }) => {
     };
 
     newWebSocket.onmessage = (message) => {
-      console.log(messages);
       const parsedMessage = JSON.parse(message.data);
 
       if (parsedMessage.action === "connectToRoom") {
         setNickname(parsedMessage.nickname);
-        let tempMessages = [...messages];
+        let tempMessages = [];
         let newMessages = parsedMessage.messages;
         for (let i = newMessages.length; i >= 0; i--) {
           if (newMessages[i] !== undefined) {
@@ -61,12 +60,30 @@ export const ChatRoomContextProvider = ({ children }) => {
       setWebSocket(null);
     };
 
+    return newWebSocket;
+  };
+
+  useEffect(() => {
+    const newWebSocket = createWebSocketConnection();
     return () => {
       setConnected(false);
-      setWebSocket(null);
       newWebSocket.close();
+      setWebSocket(null);
     };
   }, []);
+
+  const refreshContext = () => {
+    console.log("refreshing context");
+    setConnected(false);
+    setMessages([]);
+    setRoom(null);
+    setNickname(null);
+
+    if (webSocket) {
+      webSocket.close();
+    }
+    const newWebSocket = createWebSocketConnection();
+  };
 
   return (
     <chatRoomContext.Provider
@@ -81,6 +98,7 @@ export const ChatRoomContextProvider = ({ children }) => {
         setMessages,
         setNickname,
         setRoom,
+        refreshContext,
       }}
     >
       {children}
