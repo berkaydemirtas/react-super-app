@@ -9,6 +9,7 @@ import { ChatRoomContextProvider } from './components/contexts/ChatRoomContext';
 import CounterPage from './components/pages/CounterPage';
 import ChatRoom from './components/pages/ChatRoom';
 import ChatUI from './components/chatRoomComponents/Chat';
+import SecretSanta from './components/pages/SecretSanta';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='/react-super-app' element={<Home/>}></Route>
           <Route path='/react-super-app/about' element={<About/>}></Route>
           <Route path='/react-super-app/counter' element={<CounterPage/>}></Route>
+          <Route path='/react-super-app/secretSanta' element={<SecretSanta/>}></Route>
         </Routes>
           <LotDataContextProvider>
             <Routes>
