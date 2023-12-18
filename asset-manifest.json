@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-super-app/static/css/main.c8be1c96.css",
-    "main.js": "/react-super-app/static/js/main.55414740.js",
+    "main.js": "/react-super-app/static/js/main.4a99c3e7.js",
     "static/js/787.336ec820.chunk.js": "/react-super-app/static/js/787.336ec820.chunk.js",
     "index.html": "/react-super-app/index.html",
     "main.c8be1c96.css.map": "/react-super-app/static/css/main.c8be1c96.css.map",
-    "main.55414740.js.map": "/react-super-app/static/js/main.55414740.js.map",
+    "main.4a99c3e7.js.map": "/react-super-app/static/js/main.4a99c3e7.js.map",
     "787.336ec820.chunk.js.map": "/react-super-app/static/js/787.336ec820.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c8be1c96.css",
-    "static/js/main.55414740.js"
+    "static/js/main.4a99c3e7.js"
   ]
 }
